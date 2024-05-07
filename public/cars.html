@@ -6,6 +6,7 @@
   <title>Landing Page</title>
   <link rel="stylesheet" href="css/reset.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/swiper.css">
 </head>
@@ -47,30 +48,46 @@
   <div class="search d-flex w-100 position-absolute translate-middle-y justify-content-center">
     <div class="form-search">
       <form action="" class="d-flex gap-3">
-        <div class="d-flex flex-column">
-          <label for="exampleInputEmail1" class="form-label">Tipe Driver</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="search-input d-flex flex-column">
+          <label for="exampleInputEmail1" class="form-label fw-light">Tipe Driver</label>
+          <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+          <select type="email" class="form-control fw-light search-select" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <option class="search-select fw-light" selected disabled hidden>Pilih Tipe Driver</option>
+            <option class="search-select fw-light" value="">Dengan Supir</option>
+            <option class="search-select fw-light" value="">Tanpa Supir (Lepas Kunci)</option>
+          </select>
         </div>
-        <div class="d-flex flex-column">
-          <label for="exampleInputEmail1" class="form-label">Tipe Driver</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="search-input d-flex flex-column">
+          <label for="date" class="form-label fw-light">Tanggal</label>
+          <input type="email" class="form-control search-select fw-light" name="datepicker" id="date" aria-describedby="emailHelp">
         </div>
-        <div class="d-flex flex-column">
-          <label for="exampleInputEmail1" class="form-label">Tipe Driver</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="search-input d-flex flex-column">
+          <label for="exampleInputEmail1" class="form-label fw-light">Waktu Jemput/Ambil</label>
+          <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+          <select type="email" class="form-control fw-light search-select" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <option class="search-select fw-light" selected disabled hidden>Pilih Tipe Driver</option>
+            <option class="search-select fw-light" value="">Dengan Supir</option>
+            <option class="search-select fw-light" value="">Tanpa Supir (Lepas Kunci)</option>
+            <option class="search-select fw-light" value="">Tanpa Supir (Lepas Kunci)</option>
+            <option class="search-select fw-light" value="">Tanpa Supir (Lepas Kunci)</option>
+          </select>
         </div>
-        <div class="d-flex flex-column">
-          <label for="exampleInputEmail1" class="form-label">Tipe Driver</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="search-input d-flex flex-column">
+          <label for="exampleInputEmail1" class="form-label fw-light">Jumlah Penumpang (optional)</label>
+          <input type="email" class="form-control search-select fw-light" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="d-flex flex-column justify-content-end">
-          <button type="button" class="btn btn--primary">Cari Mobil</button>
+          <button type="button" class="btn btn--primary search-select fw-light" id="search-btn">Cari Mobil</button>
         </div>
       </form>
     </div>
   </div>
-  <section class="services d-flex justify-content-center">
-  </section>
+  <div class="cars">
+    <div id="cars-container" class="cars-container" >
+    </div>
+  </div>
+  <!-- <section class="services d-flex justify-content-center">
+  </section> -->
   <footer class="footer">
     <div class="footer__container d-flex w-100 flex-row align-items-start justify-content-center">
       <div class="footer__address text--light">
@@ -128,19 +145,16 @@
     </div>
   </footer>
   <script>
-    const swiperElement = document.querySelector('swiper-container');
-    const buttonPrev = document.querySelector('.testimony__nav--prev');
-    const buttonNext = document.querySelector('.testimony__nav--next');
-
-    buttonPrev.addEventListener('click', () => {
-      swiperElement.swiper.slidePrev();
-    });
-    buttonNext.addEventListener('click', () => {
-      swiperElement.swiper.slideNext();
-    });
+    
   </script>
+  <script type="text/javascript" src="./scripts/binar.js"></script>
+  <script type="text/javascript" src="./scripts/app.js"></script>
+  <script type="text/javascript" src="./scripts/car.js"></script>
+  <script type="text/javascript" src="./scripts/main.js"></script>
+  <script type="module" src="./scripts/lib.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
   <script type="text/javascript" src="https://db.onlinewebfonts.com/s/0d49fc455f4a8951a42daf952412a713?family=Helvetica+Neue+Regular"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker.min.js"></script>
 </body>
 </html>

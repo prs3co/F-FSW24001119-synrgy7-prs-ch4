@@ -115,8 +115,57 @@ line-height: 3.375rem;
   border-radius: 6px;
   box-shadow:
     0px 0px 12.9px rgba(0, 0, 0, 0.045),
-    0px 0px 103px rgba(0, 0, 0, 0.09)
-;
+    0px 0px 103px rgba(0, 0, 0, 0.09);
+}
+
+.search-input {
+  width: 200px;
+  font-size: 0.875rem;
+}
+
+.search-select {
+  font-size: 0.875rem;
+}
+
+select option[disabled] {
+  display: none;
+}
+
+.cars {
+  padding: 5rem 11rem;
+}
+
+.cars-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.car-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 calc((100% / 3) - 3rem);
+  /* gap: 1rem; */
+  /* width: calc(100%/3); */
+  border-radius: 6px;
+  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.1);
+}
+
+.car-img {
+  border-radius: 6px;
+}
+
+.car-img > img {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+.car-text {
+  padding: 1rem;
+
 }
 
 .services {

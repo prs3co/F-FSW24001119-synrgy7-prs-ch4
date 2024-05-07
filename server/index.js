@@ -3,6 +3,7 @@ const { PORT = 8000, HOST = 'localhost' } = process.env
 
 const fs = require('fs')
 const path = require('path')
+const url = require('url'); // Import modul url untuk mengakses parameter
 const PUBLIC_DIRECTORY = path.join(__dirname, '..', 'public')
 console.log(PUBLIC_DIRECTORY);
 
@@ -15,12 +16,16 @@ console.log(PUBLIC_DIRECTORY);
 // }
 
 function onRequest(req, res) {
-  let filePath = path.join(PUBLIC_DIRECTORY, req.url);
+  const parsedUrl = url.parse(req.url, true);
 
-  if (req.url === '/') {
+  let filePath = path.join(PUBLIC_DIRECTORY, parsedUrl.pathname);
+
+  if (parsedUrl.pathname === '/') {
     filePath = path.join(PUBLIC_DIRECTORY, 'index.html');
-  } else if (req.url === '/cars') {
+  } else if (parsedUrl.pathname === '/cars') {
     filePath = path.join(PUBLIC_DIRECTORY, 'cars.html');
+  } else if (parsedUrl.pathname === '/example') {
+    filePath = path.join(PUBLIC_DIRECTORY, 'index.example.html');
   }
 
   fs.readFile(filePath, (err, data) => {
