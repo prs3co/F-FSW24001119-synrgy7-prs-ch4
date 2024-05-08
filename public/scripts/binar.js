@@ -36,11 +36,6 @@ class Binar {
       localStorage.setItem("CARS", JSON.stringify(cars));
     }
 
-    if (filterer instanceof Function) {
-      console.log(filterer);
-      console.log('bisa');
-    }
-
     if (filterer instanceof Function) return cars.filter(filterer);
 
     return cars;
