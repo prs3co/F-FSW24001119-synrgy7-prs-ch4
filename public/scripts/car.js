@@ -1,3 +1,7 @@
+function numberWithThousands(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
 class Car {
   static list = [];
 
@@ -45,11 +49,17 @@ class Car {
         <img src="${this.image}" alt="${this.manufacture}" width="64px">
       </div>
       <div class="car-text">
-        <p>id: <b>${this.id}</b></p>
-        <p>plate: <b>${this.plate}</b></p>
-        <p>manufacture: <b>${this.manufacture}</b></p>
-        <p>model: <b>${this.model}</b></p>
-        <p>available at: <b>${this.availableAt}</b></p>
+        <div>
+          <p><b>${this.type} ${this.model}</b></p>
+          <p><b>RP ${numberWithThousands(this.rentPerDay)} / Hari</b></p>
+          <p class="car-desc">${this.description}</p>
+          <p>${this.capacity} Orang</p>
+          <p>${this.transmission}</p>
+          <p>Tahun ${this.year}</p>
+        </div>
+        <div class="d-flex flex-column justify-content-end">
+          <button type="button" class="btn btn--primary search-select fw-light" id="search-btn">Pilih Mobil</button>
+        </div>
       </div>
     `;
   }
