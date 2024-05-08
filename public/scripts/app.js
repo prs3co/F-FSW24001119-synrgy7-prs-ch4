@@ -57,8 +57,6 @@ class App {
   };
 
   filterer = (car) => {
-    console.log(this.filter.capacity);
-    console.log(car.capacity);
     if (this.filter.rentalDate && convertToUserDateFormat(car.availableAt) <= this.filter.rentalDate) {
       return false;
     }

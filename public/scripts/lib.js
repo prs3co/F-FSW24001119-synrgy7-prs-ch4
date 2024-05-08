@@ -5,4 +5,3 @@ const datepicker = new Datepicker(dateElem, {
   // minDate: 'today'
 })
 
-console.log(dateElem);
